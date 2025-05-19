@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}"/>
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.js' %}"></script>
+</head>
+<body>
+<nav id="navbar-example2" class="navbar bg-body-light px-3 mb-3">
+    <a class="navbar-brand" style="color: darkred" href="#">Cakery&Bakery</a>
+    <ul class="nav nav-pills">
+        <li class="nav-item">
+            <a class="nav-link" style="color:gray;" href="{% url 'index' %}">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" style="color:gray;" href="#">About</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" style="color:gray;font-weight: bold" href="{% url 'add_cake' %}">Add</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" style="color:gray;" href="#">Pricing</a>
+        </li>
+    </ul>
+</nav>
+<div class="bg-danger container-fluid" style="padding: 100px 50px;">
+    <div class="row g-3">
+        <div class="col pt-5">
+            <h2 style="color: white">Explore the wonderland of tastes!</h2>
+            <span style="color: white;opacity: 50%">Assignment for HCI Exam in September 2024</span>
+            <div class="row pt-3">
+                <div class="col">
+                    <button class="btn btn-light">Get Started</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-outline-light">Learn more</button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <img src="{% static 'main.png' %}" alt="cake" class="img-fluid">
+        </div>
+    </div>
+</div>
+<div class="bg-light pt-5 pb-5">
+    <div class="text-center flex-column justify-content-center mx-auto" style="width: 50%;">
+        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet fugit perferendis voluptates? Dolores inventore, nihil. Aperiam architecto beatae cupiditate deserunt, dignissimos eligendi iste minima perspiciatis possimus provident rerum similique tempore.</span>
+    </div>
+    <div class="row pt-3 text-center justify-content-center align-items-center">
+        <div class="col d-flex justify-content-center align-items-center gap-2">
+            <img src="{% static 'avatar1.png' %}" alt="Avatar" style="height: 50px;">
+            <span>John Doe / CEO of Cakery&Bakery</span>
+        </div>
+    </div>
+
+</div>
+<div class="text-center pt-5 pb-5">
+    <span class="fw-bold text-danger">Products</span>
+    <br>
+    <span>Add more products in the edit form!</span>
+<div class="row">
+    {% for cake in cakes %}
+        <div class="col-4 px-5">
+        <div class="card">
+          <img src="{{ cake.image.url }}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{ cake.name }}</h5>
+            <p class="card-text">{{ cake.description }}</p>
+            <p>{{ cake.baker }}</p>
+          </div>
+        </div>
+        </div>
+    {% endfor %}
+</div>
+</div>
+<div class="row pt-3 bg-danger">
+    <div class="col">
+        <span>Copyright &copy;HCT 2025</span>
+    </div>
+    <div class="col text-end">
+        <span>Privacy Terms Add</span>
+    </div>
+</div>
+</body>
+</html>
