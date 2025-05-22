@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}"/>
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.js' %}"></script>
+    <meta charset="UTF-8">
+    <title>Add and out of stock</title>
+</head>
+<body>
+    <div class="row">
+    {% for product in products %}
+        <div class="col-4 px-5">
+        <div class="card border border-0 text-center">
+          <img src="{{ product.image.url }}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">${{ product.price }}</p>
+          </div>
+        </div>
+        </div>
+    {% endfor %}
+    </div>
+<div class="row justify-content-center">
+    <form method="post" action="{% url 'outofstock' %}" enctype="multipart/form-data"
+          class="w-75 bg-secondary-subtle p-5 ">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+        <button class="btn btn-primary w-100">Submit</button>
+    </form>
+</div>
+<div class="pt-5 text-center bg-light">
+    <div class="row align-items-center">
+        <div class="col">
+            <span class="fw-bold">FINKI exam</span> <br>
+            <span>Test</span> <br>
+            <span>Test</span>
+        </div>
+        <div class="col">
+            <span class="fw-bold">FINKI exam</span> <br>
+            <span>Test</span> <br>
+            <span>Test</span>
+        </div>
+        <div class="col">
+            <span class="fw-bold">FINKI exam</span> <br>
+            <span>Test</span> <br>
+            <span>Test</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

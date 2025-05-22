@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}"/>
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.js' %}"></script>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<div class="row pt-3 text-center justify-content-center align-items-center">
+    <div class="col d-flex justify-content-center align-items-center gap-2">
+        <nav class="col-md-3 col-lg-2 bg-light p-3">
+            <h5 class="mb-4" style="color: #6c9a1f; font-weight: bold;">&#9776; All departments</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item"><a class="nav-link text-dark" href="#">Fresh Meat</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="#">Vegetables</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="#">Fruit & Nut Gifts</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="#">Fresh Berries</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="#">Ocean Foods</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="#">Butter & Eggs</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="#">Fresh Onion</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="#">Oatmeal</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="#">Fresh Bananas</a></li>
+            </ul>
+        </nav>
+        <div class="position-relative" style="overflow: hidden;">
+            <img src="{% static 'banner.jpg' %}" alt="Banner" class="img-fluid w-100" style="object-fit: cover;">
+            <div class="position-absolute"
+                 style="top: 20px; left: 20px; max-width: 300px; padding: 20px; border-radius: 8px;">
+                <h6 style="color: #6c9a1f; font-weight: bold;">FRUIT FRESH</h6>
+                <h1 class="fw-bold">Vegetable 100% Organic</h1>
+                <p class="text-muted">Free Pickup and Delivery Available</p>
+<a href="{% url 'outofstock' %}" class="btn" style="background-color: #88b04b; color: white;">SHOP NOW</a>            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row pt-3 text-center justify-content-center align-items-center">
+    <h3 class="fw-bold">From The Blog</h3>
+    <span style="color: green">_______</span>
+    <div class="card border border-0" style="width: 24rem;">
+
+        <img src="{% static 'blog-1.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s
+                content.</p>
+        </div>
+
+    </div>
+    <div class="card border border-0" style="width: 24rem;">
+        <img src="{% static 'blog-2.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s
+                content.</p>
+        </div>
+
+    </div>
+    <div class="card border border-0" style="width: 24rem;">
+        <img src="{% static 'blog-3.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s
+                content.</p>
+        </div>
+
+    </div>
+</div>
+
+<div class="pt-5 text-center bg-light">
+    <div class="row align-items-center">
+        <div class="col">
+            <span class="fw-bold">FINKI exam</span> <br>
+            <span>Test</span> <br>
+            <span>Test</span>
+        </div>
+        <div class="col">
+            <span class="fw-bold">FINKI exam</span> <br>
+            <span>Test</span> <br>
+            <span>Test</span>
+        </div>
+        <div class="col">
+            <span class="fw-bold">FINKI exam</span> <br>
+            <span>Test</span> <br>
+            <span>Test</span>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
